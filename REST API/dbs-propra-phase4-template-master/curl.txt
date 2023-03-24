@@ -1,0 +1,78 @@
+Get/nutzer:
+curl -L -X GET "http://localhost:8080/nutzer?email=alex@gmail.com"
+
+Post/nutzer:
+curl -L -X POST "http://localhost:8080/nutzer" -F "email=\"nutzer11@gmail.com\"" -F "passwort=\"cdD78p\""
+
+Get Kunden
+curl -L -X GET "http://localhost:8080/kunden?telefonnummer=01322267891&email=kund123@yahoo.fr"
+
+Post Kunden:
+curl -L -X POST "http://localhost:8080/kunden" -F "email=\"nutzer11@gmail.com\"" -F "passwort=\"cdD78p\"" -F "telefon=\"01683167891\""
+
+
+get Projektleiter:
+curl -L -X GET "http://localhost:8080/projektleiter?gehalt=30566.65&email=alexandra21@yahoo21.fr"
+
+Post Projektleiter:
+curl -L -X POST "http://localhost:8080/projektleiter" -F "email=\"nutzer11@gmail.com\"" -F "passwort=\"cdD78p\"" -F "gehalt=\"98966.65\""
+
+Get Spezialisten:
+curl -L -X GET "http://localhost:8080/spezialisten?email=alexa96@yahoo.fr&passwort=aUb23p&verfuegbar=ja"
+
+Post Spezialisten:
+curl -L -X POST "http://localhost:8080/spezialisten" -F "email=\"nutzer11@gmail.com\"" -F "passwort=\"cdD78p\"" -F "verfuegbarkeitsstatus=\"hoch\""
+
+Get Projekten:
+curl -L -X GET "http://localhost:8080/projekte"
+
+Get projekte/{projektid}/bewertungen:
+curl -L -X GET "http://localhost:8080/projekte/2/bewertungen"
+
+Get projekte/{projektid}/aufgaben:
+curl -L -X GET "http://localhost:8080/projekte/2/aufgaben"
+
+Get projekte/{projektid}/spezialisten:
+curl -L -X GET "http://localhost:8080/projekte/2/spezialisten"
+
+Get entwickler:
+curl -L -X GET "http://localhost:8080/entwickler?kuerzel=abcde123"
+
+
+Post entwickler:
+curl -L -X POST "http://localhost:8080/entwickler" -F "email=\"nutzer11@gmail.com\"" -F "passwort=\"cdD78p\"" -F "verfuegbarkeitsstatus=\"hoch\"" -F "kuerzel=\"abcde645\"" -F "benennung=\"mysql\""
+
+
+Get programmierer:
+curl -L -X GET "http://localhost:8080/programmierer"
+
+
+POST projekte
+curl -u "kund123@yahoo.fr:xKl56p"  -L -X POST "http://localhost:8080/projekte"  -F "name=\"aufgabe\"" -F "deadline=\"1999-02-01\""
+
+
+
+Post projekte/{projektid}/bewertungen:
+curl -u "kund123@yahoo.fr:xKl56p"  -L -X POST "http://localhost:8080/projekte/2/bewertungen"  -F "punktzahl=\"7\"" -F "text=\"adada\""
+
+
+
+Patch bewertung
+curl -u "kund123@yahoo.fr:xKl56p" -L -X PATCH "http://localhost:8080/bewertungen/2"  -F "punktzahl=\"9\"" -F "text=\"bababa\""
+
+
+Delete bewertungen/{bewertungid}
+curl -u "kund123@yahoo.fr:xKl56p" -L -X DELETE "http://localhost:8080/bewertungen/11"
+
+
+
+Post projekte/{projektid}/aufgaben
+curl -u "projektleiter1@gmail.com:xKb16z" -L -X POST "http://localhost:8080/projekte/6/aufgaben" -F "deadline=\"1997-09-08\"" -F "beschreibung=\"es ist\"" -F "status=\"nicht  verfugbar\"" -F "prioritaet=\"nicht so hoch\""
+
+
+
+Post projekte/{projektid}/spezialisten
+curl -u "projektleiter1@gmail.com:xKb16z" -L -X POST "http://localhost:8080/projekte/6/spezialisten"  -F "spezialistid=\"1\""
+
+
+
